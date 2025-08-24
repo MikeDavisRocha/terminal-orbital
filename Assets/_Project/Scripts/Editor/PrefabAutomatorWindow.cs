@@ -43,23 +43,6 @@ public class PrefabAutomatorWindow : EditorWindow
 
         if (prefab != null)
         {
-            string defaultMaterialPath = "Assets/_Project/Art/Materials/M_DefaultPBR.mat";
-            Material defaultMaterial = AssetDatabase.LoadAssetAtPath<Material>(defaultMaterialPath);
-
-            if (defaultMaterial != null)
-            {
-                Renderer renderer = prefab.GetComponentInChildren<Renderer>();
-                if (renderer != null)
-                {
-                    renderer.sharedMaterial = defaultMaterial;
-                    Debug.Log("Material padrão aplicado!");
-                }
-            }
-            else
-            {
-                Debug.LogWarning("Não foi possível encontrar o material padrão em: " + defaultMaterialPath);
-            }
-
             Debug.Log("Prefab criado com sucesso em: " + prefabPath);
             EditorGUIUtility.PingObject(prefab);
         }
